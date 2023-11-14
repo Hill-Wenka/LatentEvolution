@@ -1,0 +1,11 @@
+data:
+  dataset: 'ACE2_variants'
+  sequence_length: 83
+  mini_set_ratio: null
+  data_class: 'Protein'
+  lazy_load: false
+  train_ratio: 0.7
+  valid_ratio: 0.1
+  test_ratio: 0.2
+  split_valid: null
+  label: 'ddG'

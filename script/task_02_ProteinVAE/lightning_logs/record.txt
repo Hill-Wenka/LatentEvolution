@@ -1,0 +1,4 @@
+version_3: use few data for debugging, VAE v2, pre-experimental version
+version_4: use total 126K data, VAE v2, the largest version, the latent dimension is 128
+version_5: use total 126K data, VAE v2, similar to version_4 but the latent dimension is set to 2 for visualization
+version_6: use total 126K data, VAE v3, the latent dimension is 170

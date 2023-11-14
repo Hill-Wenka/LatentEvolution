@@ -1,0 +1,8 @@
+hparams:
+  num_layers: 6
+  embed_dim: 1280
+  attention_heads: 20
+  alphabet: ESM-1b
+  token_dropout: false
+  embedding_layer: true
+  lm_head: false

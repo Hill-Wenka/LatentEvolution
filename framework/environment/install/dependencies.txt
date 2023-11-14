@@ -1,0 +1,12 @@
+lightning
+tensorboard
+OmegaConf
+xlsxwriter
+aaindex
+Levenshtein
+nni
+py3Dmol
+fair-esm
+xgboost
+lightgbm
+minepy

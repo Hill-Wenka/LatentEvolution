@@ -1,0 +1,4 @@
+project: 'template'
+dataset: 'template'
+model: 'template'
+seed: 42

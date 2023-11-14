@@ -1,0 +1,4 @@
+model: 'MLP'
+hparams:
+  dim_embedding: 1024
+  activation: 'ReLU'

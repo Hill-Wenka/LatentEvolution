@@ -1,0 +1,4 @@
+nni:
+  auto_ml: false
+  metric: 'AUC'
+  use_best: true

@@ -1,0 +1,58 @@
+project: 'ProteinVAE'
+nni:
+  auto_ml: false
+logger:
+  save_dir: './script/task_02_ProteinVAE/'
+trainer:
+  max_epochs: 50
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: norm
+  enable_checkpointing: false
+  num_sanity_val_steps: 2
+  accumulate_grad_batches: 1
+  val_check_interval: 0.5
+progress_bar_callback:
+  refresh_rate: 1
+  process_position: 0
+ckpt_callback: null
+early_stop_callback:
+  monitor: 'valid/loss_epoch'
+  mode: 'min'
+swa_callback: null
+train_dataloader:
+  batch_size: 64
+  num_workers: 1
+  shuffle: true
+  drop_last: true
+  pin_memory: true
+  persistent_workers: true
+valid_dataloader:
+  batch_size: 64
+  num_workers: 1
+  shuffle: false
+  pin_memory: true
+  persistent_workers: true
+test_dataloader:
+  batch_size: 64
+  num_workers: 1
+  shuffle: false
+  pin_memory: true
+  persistent_workers: true
+predict_dataloader:
+  batch_size: 64
+  num_workers: 1
+  shuffle: false
+  pin_memory: true
+  persistent_workers: true
+optimizer:
+  name: AdamW
+  args:
+    lr: 0.0002
+    weight_decay: 0
+scheduler:
+  name: null
+  args: null
+loss:
+  mse_loss:
+    name: 'CrossEntropy'
+    args: { }

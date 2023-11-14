@@ -1,0 +1,8 @@
+xlsx_output_format:
+  general_format:
+    align: 'center'
+    valign: 'vcenter'
+  number_format:
+    num_format: '#,##0.0000'
+    align: 'center'
+    valign: 'vcenter'

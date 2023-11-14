@@ -1,0 +1,39 @@
+hparams:
+  encoder_transformer:
+    num_layers: 4
+    embed_dim: 1280
+    attention_heads: 20
+    alphabet: 'ESM-1b'
+    token_dropout: False
+    embedding_layer: True
+    lm_head: False
+    return_layer: -1
+  encoder_mlp:
+    hiddens: [ 1280, 512, 128 ]
+    activation: 'ReLU'
+    batch_norm: False
+    layer_norm: True
+    bias: True
+    dropout: 0.1
+  decoder_mlp:
+    hiddens: [ 64, 512, 1280 ]
+    activation: 'ReLU'
+    batch_norm: False
+    layer_norm: True
+    bias: True
+    dropout: 0.1
+  decoder_transformer:
+    num_layers: 4,
+    embed_dim: 1280
+    attention_heads: 20
+    alphabet: 'ESM-1b'
+    token_dropout: False
+    embedding_layer: False
+    lm_head: False
+    return_layer: -1
+  regressor_head:
+    hiddens: [ 5440, 64, 32, 2 ]  # VAE v3: L*D/2 as input
+    activation: 'ReLU'
+    batch_norm: True
+    bias: True
+    dropout: 0.1

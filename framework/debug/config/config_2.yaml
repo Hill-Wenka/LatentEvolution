@@ -1,0 +1,12 @@
+project: 'prot_agg_2'
+data:
+  dataframe: 'dataset_2.pt'
+  partition: 'Partition'
+  labels:
+    - 'Class'
+  tokens:
+    - 'Peptide'
+  max_length:
+    Peptide: 'auto'
+trainer:
+  max_epochs: 20

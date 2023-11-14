@@ -1,0 +1,6 @@
+hparams:
+  model_name: esm2_t33_650M_UR50D
+  layer_fusion: mean
+  repr_layers: null
+  projection: false
+  projection_params: null
