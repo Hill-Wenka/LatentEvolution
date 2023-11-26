@@ -1,6 +1,6 @@
 import copy
 
-import lightning.pytorch as pl
+import lightning as pl
 import nni
 import omegaconf
 import torch

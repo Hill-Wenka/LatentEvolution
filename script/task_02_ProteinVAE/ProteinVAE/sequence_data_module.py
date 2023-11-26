@@ -1,4 +1,4 @@
-import lightning.pytorch as pl
+import lightning as pl
 import numpy as np
 import pandas as pd
 import torch
@@ -71,6 +71,10 @@ class SequenceDataModule(pl.LightningDataModule):
             if self.log:
                 print('[len self.train_dataset]', len(self.train_dataset))
                 print('[len self.val_dataset]', len(self.valid_dataset))
+        elif stage == 'validate':
+            self.valid_dataset = self.dataset.construct_subset(self.valid_index, 'valid_dataset')
+            if self.log:
+                print('[len self.val_dataset]', len(self.valid_dataset))
         elif stage == 'test':
             # self.mode == 'train' 对应于trainer在train结束后立即进行test的情况
             if self.mode == 'train' or self.mode == 'test':
@@ -83,7 +87,12 @@ class SequenceDataModule(pl.LightningDataModule):
                     print('[len self.predict_dataset]', len(self.predict_dataset))
             else:
                 raise RuntimeError(f'No such parameter mode: {self.mode}')
+        elif stage == 'predict':
+            self.predict_dataset = self.dataset.construct_subset(self.predict_index, 'predict_dataset')
+            if self.log:
+                print('[len self.predict_dataset]', len(self.predict_dataset))
         else:
+            print('stage', stage)
             raise RuntimeError('Parameter {stage} is None or illegal, please set it properly')
         if self.log:
             print('=' * 30, f'Setup [{stage}] End', '=' * 30)

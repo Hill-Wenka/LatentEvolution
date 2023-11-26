@@ -1,6 +1,6 @@
 import os
 
-import lightning.pytorch as pl
+import lightning as pl
 import torch
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint, StochasticWeightAveraging, TQDMProgressBar
 from lightning.pytorch.loggers import TensorBoardLogger
@@ -30,6 +30,7 @@ def get_pl_trainer(args) -> pl.Trainer:
     callbacks = [x for x in callbacks if x is not None]
 
     if args.trainer.strategy is not None and 'ddp' in args.trainer.strategy:
+        print('Using DDPStrategy')
         ddp_strategy = DDPStrategy(find_unused_parameters=False)
         trainer = pl.Trainer(
             logger=logger,

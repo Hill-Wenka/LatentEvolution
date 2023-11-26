@@ -1,4 +1,4 @@
-import lightning.pytorch as pl
+import lightning as pl
 import numpy as np
 import pandas as pd
 import torch
